@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+{% block external %}
+    <script type="text/javascript"
+	    src="/media/toy_edit.js">
+    </script>
+    {% endblock %}
+
+{% block title %} {{ toy.name }} Details{% endblock %}
+{% block head %} {{ toy.name }} Details{% endblock %}
+{% block content %}
+
+{% if show_edit %}
+<strong>Brand:</strong> <a href="edit/{{ toy.id|urlencode }}">{{ toy.brand }}</a><br/>
+{% else %}
+<strong>Brand:</strong> {{ toy.brand }}<br/>
+{% endif %}
+<strong>Name:</strong> {{ toy.name }}<br/>
+<strong>Quantity:</strong> {{ toy.quantity }}<br/>
+<strong>Color:</strong> {{ toy.color }}<br/>
+<strong>Created:</strong> {{ toy.created }}<br/>
+<strong>ID:</strong> {{ toy.id }}<br/>
+
+{% endblock %}
+

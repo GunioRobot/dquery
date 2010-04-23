@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+{% block title %} Welcome to Django + jquery Basics{% endblock %}
+{% block head %} Welcome to Django + jquer Basics{% endblock %}
+{% block content %}
+
+<ul>
+	{% for toy in toys %} <li>
+	{{ toy.name }} - 
+	{% if show_detail %} <a href="/toys/{{ toy.id }}"> [ details ] </a>
+	{% endif %} {% endfor %}
+</ul>
+{% endblock %}
